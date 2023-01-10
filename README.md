@@ -6,4 +6,4 @@
 - Количество пользователей, совершивших покупку
 - Retention Rate
 
-**Tags:** `cohort_analysis`, `power_bi`
+**Tags:** `cohort_analysis`, `power_bi`, `dashboard`, `DAX`
