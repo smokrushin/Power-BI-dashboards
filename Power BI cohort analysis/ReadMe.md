@@ -80,3 +80,27 @@ DIVIDE(
   COUNTROWS(SUMMARIZE('UserData', UserData[CustomerKey], UserData[Месяц первой транзакции])), BLANK())
 ```
 
+### 4. Построим визуализацию типа матрица выручки пользователей по месячным когортам
+
+![cohorts_total_income](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Power%20BI%20cohort%20analysis/cohorts_total_income.png)
+
+В строки матрицы добавим значение столбца *Месяц первой транзакции* таблицы *UserData*, 
+в столбцы - столбец *дней30 с первой покупки* таблицы *Sales*,
+в качестве значений используем меру *все покупки пользователя*
+
+### 5. Построим визуализацию типа матрица количества пользователей, сделавших заказы по месячным когортам
+
+![cohorts_users_count](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Power%20BI%20cohort%20analysis/cohorts_users_count.png)
+
+В строки матрицы добавим значение столбца *Месяц первой транзакции* таблицы *UserData*, 
+в столбцы - столбец *дней30 с первой покупки* таблицы *Sales*,
+в качестве значений используем меру *количество пользователей*
+
+### 6. Построим визуализацию типа матрица со значениями Retention Rate для месячных когорт пользователей
+
+![cohorts_retention_rate](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Power%20BI%20cohort%20analysis/cohorts_retention_rate.png)
+
+В строки матрицы добавим значение столбца *Месяц первой транзакции* таблицы *UserData*, 
+в столбцы - столбец *дней30 с первой покупки* таблицы *Sales*,
+в качестве значений используем меру *доля пользователей*
+
