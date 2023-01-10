@@ -6,4 +6,4 @@
 - Количество пользователей, совершивших покупку
 - Retention Rate
 
-**Tags:** `cohort-analysis`, `microsoft-power-bi`, `dashboard`, `DAX`
+**Tags:** `data-analysis`, `cohort-analysis`, `microsoft-power-bi`, `powerbi`, `dashboard`, `DAX`
