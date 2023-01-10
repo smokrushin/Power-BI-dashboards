@@ -104,3 +104,4 @@ DIVIDE(
 в столбцы - столбец *дней30 с первой покупки* таблицы *Sales*,
 в качестве значений используем меру *доля пользователей*
 
+#### [Ссылка](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Power%20BI%20cohort%20analysis/cohorts.pbix) на Power BI исходник
