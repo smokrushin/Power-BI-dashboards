@@ -5,4 +5,5 @@
 - Выручка, $
 - Количество пользователей, совершивших покупку
 - Retention Rate
+
 **Tags:** `cohort_analysis`, `power_bi`
