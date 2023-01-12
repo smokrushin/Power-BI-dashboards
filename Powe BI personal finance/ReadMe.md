@@ -64,3 +64,65 @@
 Визуализация динамики нормы сбережений исполнена в виде лайнчарта с закрашенной областью. Позволяет увидеть как менялся процент средств, отправляемых на инвестиции во времени.
 
 ![savings_rate](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Powe%20BI%20personal%20finance/savings_rate.png)
+
+Для детализации расходов используется матрица, в строках которой категории расходов, а в значениях - среднемесячные расходы, динамика расходов год к году и сумма расходов за выбранный период
+
+![expenses](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Powe%20BI%20personal%20finance/expenses.png)
+
+Меры для расчета среднемесячных расходов и динамики год к году:
+
+Среднемесячные расходы
+
+```
+Среднемесячные расходы = calculate(sum('raw'[сумма]) / DISTINCTCOUNT('Calendar'[Month_Year]), 'raw'[тип]="расход")
+```
+
+Предыдущий год среднемесячные расходы
+
+```
+Предыдущий год среднемесячные расходы = 
+calculate
+    (sum('raw'[сумма]) / DISTINCTCOUNT('Calendar'[Month_Year]),
+    PREVIOUSYEAR ('Calendar'[Month_Year]), 
+    'raw'[тип]="расход")
+```
+
+Динамика расходов гг
+
+```
+Динамика расходов гг = 
+IFERROR(([Среднемесячные расходы] - [Предыдущий год среднемесячные расходы]) /
+[Предыдущий год среднемесячные расходы], BLANK())
+```
+
+Детализация доходов по категориям организована аналогично расходам.
+
+![income](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Powe%20BI%20personal%20finance/income.png)
+
+Меры для расчета среднемесячных доходов и динамики год к году:
+
+Среднемесячные доходы
+
+```
+Среднемесячные доходы = calculate(sum('raw'[сумма]) / DISTINCTCOUNT('Calendar'[Month_Year]), 'raw'[тип]="доход")
+```
+
+Предыдущий год среднемесячные доходы
+
+```
+Предыдущий год среднемесячные доходы = 
+calculate
+    (sum('raw'[сумма]) / DISTINCTCOUNT('Calendar'[Month_Year]),
+    PREVIOUSYEAR ('Calendar'[Month_Year]), 
+    'raw'[тип]="доход")
+```
+
+Динамика доходов гг
+
+```
+Динамика доходов гг = 
+IFERROR(([Среднемесячные доходы] - [Предыдущий год среднемесячные доходы]) /
+[Предыдущий год среднемесячные доходы], BLANK())
+```
+
+### [Ссылка](https://github.com/smokrushin/Power-BI-dashboards/blob/main/Powe%20BI%20personal%20finance/Personal_finance.pbix) на Power BI исходник
